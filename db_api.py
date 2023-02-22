@@ -181,10 +181,10 @@ def get_Item_Records(starttimestamp : tuple, endtimestamp : tuple): #optionale P
     if folder_created:
         #Pandas Dataframe als Json exportieren
         if export_json.upper() == "YES": #Kommt aus der config.json
-            file_created = df.to_json(path_or_buf=projektinfo["csv_path"]+ f"/{year}_{month}_{day}_processcalues.json")
+            file_created = df.to_json(path_or_buf=projektinfo["csv_path"]+ f"/{year}/{month}/{day}_processcalues.json")
         #Pandas Dataframe als CSV Exportieren
         if export_csv.upper() == "YES":#Kommt aus der config.json
-            file_created = df.to_csv(path_or_buf=projektinfo["csv_path"]+ f"/{year}_{month}_{day}_processcalues.csv", sep=seperator, decimal = dec, )#sep und decimal kommt aus der config.json
+            file_created = df.to_csv(path_or_buf=projektinfo["csv_path"]+ f"/{year}/{month}/{day}_processcalues.csv", sep=seperator, decimal = dec, )#sep und decimal kommt aus der config.json
         #file_created = write_json(path=projektinfo["csv_path"]+ f"/{year}_{month}_{day}_processcalues.json", data = records_all_items)
         print(f"{time.time()}: export erzeugt")
 
